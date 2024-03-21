@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Build User Profile - Healthy Lifestyle!</h1>
+    <button id="start-button" type="button">Start!</button>
+    <div class="container">
+        <p id="prompt-title">STEP 1 - Personal Details | Question 1/4</p>
+        <div class="prompt-section">
+            <p>Prompt</p>
+            <div class="inner-prompt-section">
+                <p id="prompt-text">Your Name:</p>
+                <input type="text" id="text-box" name="text-box">
+                <!-- Update using JavaScript -->
+            </div>
+        </div>
+        <div class="container1-bottom-buttons">
+            <button id="next-button">Next</button>
+            <button id="skip-button">Skip</button>
+        </div>
+    </div>
+
+    <div class="container-2">
+        <label for="profile-progress">Profile Progress:</label>
+        <progress id="profile-progress" value="0" max="99"></progress>
+    </div>    
+
+    <div class="container-3">
+        <p>Output:</p>
+        <div id="output">
+            <!-- Placeholder for displaying user output -->
+        </div>
+    </div>
+
+    <script>
+        const prompts =[
+            //Personal Details
+            ["What's your full name?", "How old are you!", "What's your gender?"],
+            //Health Habits
+            ["How would you describe your current physical activity level?", "Do you have any dietary preferences or restrictions?", "On average, how many hours of sleep do you get per night?"],
+            //Wellness Goals
+            ["What are your primary health and wellness goals?", "Are there any specific challenges you face in maintaining a healthy lifestyle?", "How motivated are you to make positive changes in your lifestyle?"]
+        ];
+
+        let currentPrompt = 0;
+        let currentStep = 0;
+        let nextcounter = 0;
+        let currentQuestion = 1;
+        let barValue = 0
+
+        const promptText = document.getElementById("prompt-text");
+        const progressBar = document.getElementById("profile-progress")
+        const promptTitle = document.getElementById("prompt-title");
+        const promptTextBox = document.getElementById("text-box")
+        const nextButton = document.getElementById("next-button");
+        const skipButton = document.getElementById("skip-button");
+        const startButton = document.getElementById("start-button")
+        const outputDiv = document.getElementById("output");
+        const container = document.querySelector(".container")
+        const container2= document.querySelector(".container-2")
+        const container3 = document.querySelector(".container-3")
+
+        promptTitle.textContent = "STEP 1 - Personal Details | Question 1/3";
+
+        function displayPrompts(){
+            console.log(promptText);
+            console.log("Current Prompt: " + currentPrompt);
+            console.log("Current Step: " + currentStep);
+            console.log("Current next counter: " + nextcounter);
+            promptTextBox.value = "";
+            promptText.textContent = prompts[currentPrompt][currentStep];
+            if (nextcounter == 3){
+                currentPrompt++;
+                currentQuestion = 1;
+                currentStep = 0;
+                promptTitle.textContent = `STEP 2 - Health Habits | Question ${currentQuestion}/${prompts.length}`
+                promptText.textContent = prompts[currentPrompt][currentStep];
+            } else if (nextcounter == 6){
+                currentPrompt++;
+                currentQuestion = 1;
+                currentStep = 0;
+                promptTitle.textContent = `STEP 3 - Wellness Goals | Question ${currentQuestion}/${prompts.length}`
+                promptText.textContent = prompts[currentPrompt][currentStep];
+            } else if (currentStep < prompts.length){
+                promptTitle.textContent = `STEP 1 - Personal Details | Question ${currentQuestion}/${prompts.length}`
+                if (nextcounter >= 6){
+                    promptTitle.textContent = `STEP 3 - Wellness Goals | Question ${currentQuestion}/${prompts.length}`
+                } else if (nextcounter >= 4){
+                    promptTitle.textContent = `STEP 2 - Health Habits | Question ${currentQuestion}/${prompts.length}`
+                }
+            } else {
+                promptText.textContent = "Profile completed! Thank you!";
+                nextButton.disabled = true;
+                skipButton.disabled = true;
+                progressBar.value = 100;
+            }
+        }
+
+        function updateOutput(inputValue){
+            const outputItem = document.createElement("p");
+            outputItem.textContent = inputValue;
+            outputDiv.appendChild(outputItem);
+        }
+
+        startButton.addEventListener("click", () => {
+            container.style.display = "block";
+            container2.style.display = "block";
+            container3.style.display = "block";
+        });
+
+        nextButton.addEventListener("click", () => {
+            currentStep++;
+            nextcounter++;
+            currentQuestion++;
+            barValue += 11;
+            progressBar.value = barValue
+            console.log(promptTextBox.value);
+            const inputValue = promptTextBox.value;
+            updateOutput(inputValue);
+            displayPrompts();
+        });
+
+        skipButton.addEventListener("click", () => {
+            currentStep++;
+            nextcounter++;
+            currentQuestion++;
+            barValue += 11;
+            progressBar.value = barValue
+            promptTextBox.value = "N/A"
+            const inputValue = promptTextBox.value
+            updateOutput(inputValue);
+            displayPrompts();
+        });
+
+        displayPrompts();
+    </script>
+</body>
+</html>
