@@ -25,6 +25,29 @@ body{
     background-color: #008CBA;
 }
 
+.question-navigation{
+    position: relative;
+    margin: auto;
+    display: none;
+    justify-content: space-between;
+    width: 1000px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.question-nav-button{
+    background-color: #008CBA;
+    border: none;
+    flex: 1;
+    margin: 5px;
+    height: 20px;
+    width: 75px;
+}
+
+.question-nav-button:hover{
+    background-color: #04AA60;
+}
+
 .container{
     position: relative;
     display: none;
