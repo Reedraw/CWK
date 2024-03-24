@@ -3,9 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Details</title>
+
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+        html, body, html * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body{
+            background-color: lightgray;
+        }
+
+        #heading{
+            text-align: center;
+        }
+
+        #sub-heading{
+            text-align: center;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+        }
+
+        .image-container {
+            position: relative;
+            margin-right: 20px; /* Adjust the spacing between images */
+        }
+
+        .student-image {
+            display: block;
+            width: 300px; /* Adjust the width of each image */
+            height: auto;
+            transition: opacity 0.3s ease; /* Smooth transition effect */
+        }
+
+        .student-image:hover {
+            opacity: 0.4; /* Adjust the opacity value on hover */
+        }
+
+        .image-description {
+            position: absolute;
+            bottom: -190px; /* Adjust the distance of the description box from the image */
+            left: 0;
+            width: 95%; /* Cover the whole width of the image */
+            background-color: rgba(0, 0, 0, 0.8); /* Background color of the description box */
+            color: white; /* Text color of the description */
+            padding: 5px 10px; /* Padding of the description box */
+            border-radius: 5px; /* Border radius of the description box */
+            opacity: 0; /* Initially hide the description box */
+            transition: opacity 0.3s ease; /* Smooth transition effect */
+        }
+
+        .image-container:hover .image-description {
+            opacity: 1; /* Show the description box on hover */
+        }
+
+    </style>
 </head>
 <body>
-    
+    <h1 id="heading">Student Details</h1>
+    <h3 id="sub-heading">About us! - Hover over the images for details!</h3>
+    <div class="image-row">
+        <div class="image-container">
+            <img src="https://i.ibb.co/LSnjyzc/user3.png" alt="user3" class="student-image" border="0">
+            <div class="image-description">
+                Kevin Bui<br><br>
+                Role Student 1 <br><br>
+                Designed and implemented pages: <br>
+                Splash Screen <br>
+                Shop <br>
+                content_ST1 <br>
+                pageEditor_ST1<br>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://i.ibb.co/VqX2xHH/user2.png" alt="user2" class="student-image" border="0">
+            <div class="image-description">
+                Yunus Akdag <br><br>
+                Role Student 2 <br><br>
+                Designed and implemented pages: <br>
+                Home <br>
+                Feedback <br>
+                content_ST2 <br>
+                pageEditor _ST2 <br>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://i.ibb.co/Mknc0mX/user1.png" alt="user1" class="student-image" border="0">
+            <div class="image-description">
+                Nahid Ullah <br><br>
+                Role Student 3 <br><br>
+                Designed and implemented pages: <br>
+                Profile <br>
+                Team <br>
+                content_ST3 <br>
+                pageEditor _ST3 <br>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
