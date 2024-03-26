@@ -3,8 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <title>Profile</title>
+
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+        html, body, html * {
+        font-family: 'Roboto', sans-serif;
+        }
+
+        body{
+            background-color: lightgray;
+        }
+
+        #start-button{
+            margin: auto;
+            display: block;
+
+            background-color: #04AA60;
+            border: none;
+            color: white;
+            padding: 15px 45px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        #start-button:hover{
+            background-color: #008CBA;
+        }
+
+        .question-navigation{
+            position: relative;
+            margin: auto;
+            display: none;
+            justify-content: space-between;
+            width: 1000px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        .question-nav-button{
+            background-color: #008CBA;
+            border: none;
+            flex: 1;
+            margin: 5px;
+            height: 20px;
+            width: 75px;
+        }
+
+        .question-nav-button:hover{
+            background-color: #04AA60;
+        }
+
+        .container{
+            position: relative;
+            display: none;
+            margin: auto;
+            width: 800px;
+            height: 300px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+
+        .container1-bottom-buttons{
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container1-bottom-buttons button{
+            margin: 0 5px;
+        }
+
+        .inner-prompt-section{
+            border: 1px solid black;
+            width: 500px;
+            height: 100px;
+        }
+
+        .prompt-section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            border: none;
+        }
+
+        .prompt-section p, .prompt-section div{
+            margin: 0;
+            padding: 10px;
+        }
+
+        #next-button{
+            background-color: #04AA60;
+            border: none;
+            color: white;
+            padding: 15px 45px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        #next-button:hover{
+            background-color: #008CBA;
+        }
+
+        #skip-button{
+            background-color: #04AA60;
+            border: none;
+            color: white;
+            padding: 15px 45px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        #skip-button:hover{
+            background-color: #008CBA;
+        }
+
+        .container-2{
+            display: none;
+            margin: auto;
+            width: 200px;
+            height: 50px;
+        }
+
+        .container-3{
+            display: none;
+            margin: auto;
+            border: 1px solid black;
+            width: 400px;
+            height: 350px;
+        }
+    </style>
 </head>
 <body>
     <h1>Build User Profile - Healthy Lifestyle!</h1>

@@ -35,87 +35,178 @@
         a:hover {
             text-decoration: underline;
         }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Navigation bar styles */
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+        .dropdown{
+            display: none;
+            position: fixed;
+            margin-top: 18px;
+            background-color: lightgray;
+            border: 1px solid white;
+            width: 200px;
+            height: 100px;
+            margin-left: 52.25%;
+        }
+
+        .dropdown a{
+            display: block;
+            margin-left: 2px;
+            color: black;
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
+    <nav>
+        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/home.html">Home</a>
+        <a href="https://w2045735.users.ecs.westminster.ac.uk/webdev/shop.html">Shop</a>
+        <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/profile.html">User Profile</a>
+        <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/team.html">Team</a>
+        <a id="content-dropdown">Content Page</a>
+        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/feedback.html">Feedback Form</a>
+    </nav>
+    
+    <div class="dropdown">
+        <a href="https://w2045735.users.ecs.westminster.ac.uk/webdev/content_ST1.html">Nutrition</a><br>
+        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/content_ST2.html">Mental Health</a><br>
+        <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/content_ST3.html">Exercise</a>
+    </div>
 
-<div class="container">
+    <div class="container">
 
-    <h1>7 Key Benefits of Exercise for a Healthy Lifestyle</h1>
+        <h1>7 Key Benefits of Exercise for a Healthy Lifestyle</h1>
 
-    <h2>Introduction to Exercise and Healthy Living</h2>
-    <p>It's critical to comprehend how exercise fits into keeping a healthy lifestyle. Frequent exercise provides several advantages for mental and physical health. It raises quality of life, reduces chronic diseases, and helps increase general fitness.</p>
+        <h2>Introduction to Exercise and Healthy Living</h2>
+        <p>It's critical to comprehend how exercise fits into keeping a healthy lifestyle. Frequent exercise provides several advantages for mental and physical health. It raises quality of life, reduces chronic diseases, and helps increase general fitness.</p>
 
-    <h2>1. Physical Health Benefits of Exercise</h2>
-    <p>Exercise offers a wide range of physical health benefits, including:</p>
-    <ul>
-        <li>Improved cardiovascular health and reduced risk of heart disease</li>
-        <li>Enhanced strength, flexibility, and endurance</li>
-        <li>Better weight management and metabolism</li>
-        <li>Lower blood pressure and cholesterol levels</li>
-        <li>Increased energy levels and stamina</li>
-    </ul>
+        <h2>1. Physical Health Benefits of Exercise</h2>
+        <p>Exercise offers a wide range of physical health benefits, including:</p>
+        <ul>
+            <li>Improved cardiovascular health and reduced risk of heart disease</li>
+            <li>Enhanced strength, flexibility, and endurance</li>
+            <li>Better weight management and metabolism</li>
+            <li>Lower blood pressure and cholesterol levels</li>
+            <li>Increased energy levels and stamina</li>
+        </ul>
 
-    <h2>2. Mental Health Benefits of Exercise</h2>
-    <p>Exercise also plays a crucial role in promoting mental well-being, contributing to:</p>
-    <ul>
-        <li>Reduced stress, anxiety, and depression</li>
-        <li>Enhanced mood and self-esteem</li>
-        <li>Improved cognitive function and memory</li>
-        <li>Better sleep quality and relaxation</li>
-        <li>Increased production of endorphins, the body's natural mood lifters</li>
-    </ul>
+        <h2>2. Mental Health Benefits of Exercise</h2>
+        <p>Exercise also plays a crucial role in promoting mental well-being, contributing to:</p>
+        <ul>
+            <li>Reduced stress, anxiety, and depression</li>
+            <li>Enhanced mood and self-esteem</li>
+            <li>Improved cognitive function and memory</li>
+            <li>Better sleep quality and relaxation</li>
+            <li>Increased production of endorphins, the body's natural mood lifters</li>
+        </ul>
 
-    <h2>3. Exercise and Disease Prevention</h2>
-    <p>Regular physical activity is associated with a lower risk of developing various chronic diseases, such as:</p>
-    <ul>
-        <li>Heart disease</li>
-        <li>Type 2 diabetes</li>
-        <li>Certain cancers (e.g., colon, breast)</li>
-        <li>Osteoporosis</li>
-        <li>Stroke</li>
-    </ul>
+        <h2>3. Exercise and Disease Prevention</h2>
+        <p>Regular physical activity is associated with a lower risk of developing various chronic diseases, such as:</p>
+        <ul>
+            <li>Heart disease</li>
+            <li>Type 2 diabetes</li>
+            <li>Certain cancers (e.g., colon, breast)</li>
+            <li>Osteoporosis</li>
+            <li>Stroke</li>
+        </ul>
 
-    <h2>4. Types of Exercise for a Healthy Lifestyle</h2>
-    <p>There are various types of exercise, each offering unique benefits:</p>
-    <ul>
-        <li><strong>Aerobic Exercise:</strong> Improves cardiovascular fitness and endurance (e.g., walking, running, swimming).</li>
-        <li><strong>Strength Training:</strong> Builds muscle strength and mass, enhances metabolism, and prevents age-related muscle loss (e.g., weightlifting, resistance training).</li>
-        <li><strong>Flexibility and Balance Exercises:</strong> Maintain joint mobility, prevent injuries, and improve posture and balance (e.g., yoga, tai chi).</li>
-        <li><strong>Interval Training:</strong> Combines bursts of high-intensity exercise with periods of rest or low-intensity activity, improving cardiovascular health and calorie burning.</li>
-    </ul>
+        <h2>4. Types of Exercise for a Healthy Lifestyle</h2>
+        <p>There are various types of exercise, each offering unique benefits:</p>
+        <ul>
+            <li><strong>Aerobic Exercise:</strong> Improves cardiovascular fitness and endurance (e.g., walking, running, swimming).</li>
+            <li><strong>Strength Training:</strong> Builds muscle strength and mass, enhances metabolism, and prevents age-related muscle loss (e.g., weightlifting, resistance training).</li>
+            <li><strong>Flexibility and Balance Exercises:</strong> Maintain joint mobility, prevent injuries, and improve posture and balance (e.g., yoga, tai chi).</li>
+            <li><strong>Interval Training:</strong> Combines bursts of high-intensity exercise with periods of rest or low-intensity activity, improving cardiovascular health and calorie burning.</li>
+        </ul>
 
-    <h2>5. Exercise Guidelines and Recommendations</h2>
-    <p>Understanding exercise guidelines and recommendations is essential for designing an effective fitness plan:</p>
-    <ul>
-        <li>Adults should aim for at least 150 minutes of moderate-intensity aerobic activity or 75 minutes of vigorous-intensity aerobic activity per week.</li>
-        <li>Include muscle-strengthening activities on two or more days per week.</li>
-        <li>Children and adolescents should engage in at least 60 minutes of physical activity daily, including aerobic, muscle-strengthening, and bone-strengthening exercises.</li>
-    </ul>
+        <h2>5. Exercise Guidelines and Recommendations</h2>
+        <p>Understanding exercise guidelines and recommendations is essential for designing an effective fitness plan:</p>
+        <ul>
+            <li>Adults should aim for at least 150 minutes of moderate-intensity aerobic activity or 75 minutes of vigorous-intensity aerobic activity per week.</li>
+            <li>Include muscle-strengthening activities on two or more days per week.</li>
+            <li>Children and adolescents should engage in at least 60 minutes of physical activity daily, including aerobic, muscle-strengthening, and bone-strengthening exercises.</li>
+        </ul>
 
-    <h2>6. Overcoming Barriers to Exercise</h2>
-    <p>Many individuals face challenges when it comes to maintaining a regular exercise routine:</p>
-    <ul>
-        <li><strong>Time Constraints:</strong> Schedule exercise sessions at convenient times, break workouts into shorter sessions, and prioritize physical activity.</li>
-        <li><strong>Motivation:</strong> Set realistic goals, find activities you enjoy, and enlist social support to stay motivated.</li>
-        <li><strong>Injury or Health Concerns:</strong> Consult with a healthcare professional, modify exercises as needed, and focus on low-impact activities.</li>
-        <li><strong>Environmental Barriers:</strong> Choose indoor or outdoor activities based on weather conditions, and explore alternative options if access to facilities is limited.</li>
-    </ul>
+        <h2>6. Overcoming Barriers to Exercise</h2>
+        <p>Many individuals face challenges when it comes to maintaining a regular exercise routine:</p>
+        <ul>
+            <li><strong>Time Constraints:</strong> Schedule exercise sessions at convenient times, break workouts into shorter sessions, and prioritize physical activity.</li>
+            <li><strong>Motivation:</strong> Set realistic goals, find activities you enjoy, and enlist social support to stay motivated.</li>
+            <li><strong>Injury or Health Concerns:</strong> Consult with a healthcare professional, modify exercises as needed, and focus on low-impact activities.</li>
+            <li><strong>Environmental Barriers:</strong> Choose indoor or outdoor activities based on weather conditions, and explore alternative options if access to facilities is limited.</li>
+        </ul>
 
-    <h2>7. Incorporating Exercise into Daily Life</h2>
-    <p>Making exercise a regular part of daily life is key to long-term success:</p>
-    <ul>
-        <li><strong>Set Realistic Goals:</strong> Start with achievable targets, gradually increase intensity and duration, and track progress to stay motivated.</li>
-        <li><strong>Find Activities You Enjoy:</strong> Experiment with different types of exercise, join group classes, and explore outdoor recreational activities.</li>
-        <li><strong>Be Consistent:</strong> Schedule exercise sessions as non-negotiable appointments, incorporate physical activity into daily routines, and prioritize self-care.</li>
-        <li><strong>Stay Active Throughout the Day:</strong> Take short breaks to stretch and move, walk or bike for transportation, and engage in active hobbies and chores.</li>
-        <li><strong>Make it Social:</strong> Exercise with friends, family, or pets, join sports teams or fitness groups, and participate in community events and races.</li>
-    </ul>
+        <h2>7. Incorporating Exercise into Daily Life</h2>
+        <p>Making exercise a regular part of daily life is key to long-term success:</p>
+        <ul>
+            <li><strong>Set Realistic Goals:</strong> Start with achievable targets, gradually increase intensity and duration, and track progress to stay motivated.</li>
+            <li><strong>Find Activities You Enjoy:</strong> Experiment with different types of exercise, join group classes, and explore outdoor recreational activities.</li>
+            <li><strong>Be Consistent:</strong> Schedule exercise sessions as non-negotiable appointments, incorporate physical activity into daily routines, and prioritize self-care.</li>
+            <li><strong>Stay Active Throughout the Day:</strong> Take short breaks to stretch and move, walk or bike for transportation, and engage in active hobbies and chores.</li>
+            <li><strong>Make it Social:</strong> Exercise with friends, family, or pets, join sports teams or fitness groups, and participate in community events and races.</li>
+        </ul>
 
-    <h2>Conclusion</h2>
-    <p>In conclusion, exercise is a fundamental component of a healthy lifestyle, offering numerous physical and mental health benefits. By incorporating regular physical activity into your daily routine and adopting a balanced approach to fitness, you can improve your overall well-being and quality of life.</p>
-</div>
+        <h2>Conclusion</h2>
+        <p>In conclusion, exercise is a fundamental component of a healthy lifestyle, offering numerous physical and mental health benefits. By incorporating regular physical activity into your daily routine and adopting a balanced approach to fitness, you can improve your overall well-being and quality of life.</p>
+    </div>
+    <button class="back-to-top" onclick="scrollToTop()">^</button>
 
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        var contentDropdown = document.getElementById('content-dropdown');
+        var dropdown = document.querySelector('.dropdown');
+
+        contentDropdown.addEventListener('mouseover', function() {
+            dropdown.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseover', function() {
+            dropdown.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseout', function(event) {
+            // Check if the mouseout event is not triggered when moving from the contentDropdown to the dropdown
+            if (!contentDropdown.contains(event.relatedTarget)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
 
