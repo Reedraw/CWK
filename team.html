@@ -17,6 +17,7 @@
 
         #heading{
             text-align: center;
+            margin-top: 50px;
         }
 
         #sub-heading{
@@ -61,9 +62,64 @@
             opacity: 1; /* Show the description box on hover */
         }
 
+        /* Navigation bar styles */
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            left: 0px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+        .dropdown{
+            display: none;
+            position: fixed;
+            margin-top: -10px;
+            background-color: white;
+            border: 1px solid white;
+            width: 200px;
+            height: 100px;
+            margin-left: 51.9%;
+        }
+
+        .dropdown a{
+            display: block;
+            margin-left: 2px;
+            color: black;
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
+    <nav>
+        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/home.html">Home</a>
+        <a href="https://w2045735.users.ecs.westminster.ac.uk/webdev/shop.html">Shop</a>
+        <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/profile.html">User Profile</a>
+        <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/team.html">Team</a>
+        <a id="content-dropdown">Content Page</a>
+        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/feedback.html">Feedback Form</a>
+    </nav>
+    
+    <div class="dropdown">
+        <a href="https://w2045735.users.ecs.westminster.ac.uk/webdev/content_ST1.html">Nutrition</a><br>
+        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/content_ST2.html">Mental Health</a><br>
+        <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/content_ST3.html">Exercise</a>
+    </div>
+
     <h1 id="heading">Student Details</h1>
     <h3 id="sub-heading">About us! - Hover over the images for details!</h3>
     <div class="image-row">
@@ -104,5 +160,25 @@
             </div>
         </div>
     </div>
+
+    <script>
+        var contentDropdown = document.getElementById('content-dropdown');
+        var dropdown = document.querySelector('.dropdown');
+
+        contentDropdown.addEventListener('mouseover', function() {
+            dropdown.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseover', function() {
+            dropdown.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseout', function(event) {
+            // Check if the mouseout event is not triggered when moving from the contentDropdown to the dropdown
+            if (!contentDropdown.contains(event.relatedTarget)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
