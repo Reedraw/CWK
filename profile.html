@@ -7,6 +7,7 @@
     <title>Profile</title>
 
     <style>
+        /* Importing Google Font - Roboto */
         @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
         html, body, html * {
         font-family: 'Roboto', sans-serif;
@@ -16,6 +17,7 @@
             background-color: lightgray;
         }
 
+        /* Styling the Start Button */
         #start-button{
             margin: auto;
             display: block;
@@ -30,18 +32,20 @@
             margin-bottom: 10px;
         }
 
+        /* When start button is hovered over, change colour to Blue */
         #start-button:hover{
             background-color: #008CBA;
         }
 
+        /* Styling for the Question Navigation bar d*/
         .question-navigation{
             position: relative;
             margin: auto;
             display: none;
-            justify-content: space-between;
+            justify-content: space-between; /* Add space between the buttons */
             width: 1000px;
             height: 30px;
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Spacing between the elements below it */
         }
 
         .question-nav-button{
@@ -53,10 +57,12 @@
             width: 75px;
         }
 
+        /* When hovered over, change colour to Green */
         .question-nav-button:hover{
             background-color: #04AA60;
         }
 
+        /* Styling for Container 1 */
         .container{
             position: relative;
             display: none;
@@ -66,7 +72,8 @@
             border: 1px solid black;
             margin-bottom: 10px;
         }
-
+        
+        /* Styling for the buttons inside Container 1 */
         .container1-bottom-buttons{
             position: absolute;
             bottom: 10px;
@@ -99,6 +106,7 @@
             padding: 10px;
         }
 
+        /* Styling for next button */
         #next-button{
             background-color: #04AA60;
             border: none;
@@ -113,7 +121,8 @@
         #next-button:hover{
             background-color: #008CBA;
         }
-
+        
+        /* Styling for skip button */
         #skip-button{
             background-color: #04AA60;
             border: none;
@@ -128,7 +137,8 @@
         #skip-button:hover{
             background-color: #008CBA;
         }
-
+        
+        /* Styling for Container 2 */
         .container-2{
             display: none;
             margin: auto;
@@ -136,6 +146,7 @@
             height: 50px;
         }
 
+        /* Styling for Container 3 */
         .container-3{
             display: none;
             margin: auto;
@@ -166,6 +177,8 @@
         nav a:hover {
             background-color: #555;
         }
+
+        /* Styling for Dropdown */
         .dropdown{
             display: none;
             position: fixed;
@@ -186,6 +199,7 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Bar-->
     <nav>
         <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/home.html">Home</a>
         <a href="https://w2045735.users.ecs.westminster.ac.uk/webdev/shop.html">Shop</a>
@@ -195,15 +209,17 @@
         <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/feedback.html">Feedback Form</a>
     </nav>
     
+    <!-- Dropdown (part of navigation)-->
     <div class="dropdown">
         <a href="https://w2045735.users.ecs.westminster.ac.uk/webdev/content_ST1.html">Nutrition</a><br>
         <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/content_ST2.html">Mental Health</a><br>
         <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/content_ST3.html">Exercise</a>
     </div>
 
-    <h1 style="margin-top: 50px;">Build User Profile - Healthy Lifestyle!</h1>
-    <button id="start-button" type="button">Start!</button>
+    <h1 style="margin-top: 50px;">Build User Profile - Healthy Lifestyle!</h1> <!-- Main Heading -->
+    <button id="start-button" type="button">Start!</button> <!-- Start Button -->
 
+    <!-- Question Navigation Bar -->
     <div class="question-navigation" id="question-bar">
         <button class="question-nav-button" id="P1Q1">Q1</button>
         <button class="question-nav-button" id="P1Q2">Q2</button>
@@ -215,7 +231,8 @@
         <button class="question-nav-button" id="P3Q2">Q8</button>
         <button class="question-nav-button" id="P3Q3">Q9</button>
     </div>
-
+    
+    <!-- First main container -->
     <div class="container">
         <p id="prompt-title">STEP 1 - Personal Details | Question 1/4</p>
         <div class="prompt-section">
@@ -227,24 +244,27 @@
             </div>
         </div>
         <div class="container1-bottom-buttons">
-            <button id="next-button">Next</button>
-            <button id="skip-button">Skip</button>
+            <button id="next-button">Next</button> <!-- Next Button -->
+            <button id="skip-button">Skip</button> <!-- Skip Button -->
         </div>
     </div>
 
     <div class="container-2">
         <label for="profile-progress">Profile Progress:</label>
         <progress id="profile-progress" value="0" max="99"></progress>
+        <!-- Update using JavaScript -->
     </div>    
 
     <div class="container-3">
         <p>Output:</p>
         <div id="output">
             <!-- Placeholder for displaying user output -->
+            <!-- Updated using JavaScript-->
         </div>
     </div>
 
     <script>
+        // Array holding all user prompts
         const prompts =[
             //Personal Details
             ["What's your full name?", "How old are you!", "What's your gender?"],
@@ -254,12 +274,14 @@
             ["What are your primary health and wellness goals?", "Are there any specific challenges you face in maintaining a healthy lifestyle?", "How motivated are you to make positive changes in your lifestyle?"]
         ];
 
+        //Variables holding user progression
         let currentPrompt = 0;
         let currentStep = 0;
         let nextcounter = 0;
         let currentQuestion = 1;
         let barValue = 0
 
+        //Grab HTML elements that i need to change
         const promptText = document.getElementById("prompt-text");
         const progressBar = document.getElementById("profile-progress")
         const promptTitle = document.getElementById("prompt-title");
@@ -277,51 +299,73 @@
         var contentDropdown = document.getElementById('content-dropdown');
         var dropdown = document.querySelector('.dropdown');
 
+        //Initial Sub title
         promptTitle.textContent = "STEP 1 - Personal Details | Question 1/3";
 
-        function displayPrompts(){
+        function displayPrompts() {
+            // Output information for debugging
             console.log(promptText);
             console.log("Current Prompt: " + currentPrompt);
             console.log("Current Step: " + currentStep);
             console.log("Current next counter: " + nextcounter);
+            
+            // Clear text inside the user textbox
             promptTextBox.value = "";
+
+            // Update the prompt text to the current question in the current prompt
             promptText.textContent = prompts[currentPrompt][currentStep];
-            if (nextcounter == 3){
-                currentPrompt++;
-                currentQuestion = 1;
-                currentStep = 0;
-                promptTitle.textContent = `STEP 2 - Health Habits | Question ${currentQuestion}/${prompts.length}`
+
+            // Check if the next counter has reached certain thresholds to switch to the next prompt
+            if (nextcounter == 3) { // If the next counter is 3, indicating completion of the first set of questions
+                currentPrompt++; // Move to the next set of prompts
+                currentQuestion = 1; // Reset the question counter for the new set
+                currentStep = 0; // Reset the step counter for the new set
+                // Update the prompt title to reflect the new step
+                promptTitle.textContent = `STEP 2 - Health Habits | Question ${currentQuestion}/${prompts.length}`;
+                // Update the prompt text to the first question of the new set
                 promptText.textContent = prompts[currentPrompt][currentStep];
-            } else if (nextcounter == 6){
-                currentPrompt++;
-                currentQuestion = 1;
-                currentStep = 0;
-                promptTitle.textContent = `STEP 3 - Wellness Goals | Question ${currentQuestion}/${prompts.length}`
+            } else if (nextcounter == 6) { // If the next counter is 6, indicating completion of the second set of questions
+                currentPrompt++; // Move to the next set of prompts
+                currentQuestion = 1; // Reset the question counter for the new set
+                currentStep = 0; // Reset the step counter for the new set
+                // Update the prompt title to reflect the new step
+                promptTitle.textContent = `STEP 3 - Wellness Goals | Question ${currentQuestion}/${prompts.length}`;
+                // Update the prompt text to the first question of the new set
                 promptText.textContent = prompts[currentPrompt][currentStep];
-            } else if (currentStep < prompts.length){
-                promptTitle.textContent = `STEP 1 - Personal Details | Question ${currentQuestion}/${prompts.length}`
-                if (nextcounter >= 6){
-                    promptTitle.textContent = `STEP 3 - Wellness Goals | Question ${currentQuestion}/${prompts.length}`
-                } else if (nextcounter >= 4){
-                    promptTitle.textContent = `STEP 2 - Health Habits | Question ${currentQuestion}/${prompts.length}`
+            } else if (currentStep < prompts.length) { // If the current step is less than the total number of prompts
+                // Update the prompt title based on the current question and prompt
+                promptTitle.textContent = `STEP ${currentPrompt + 1} - ${currentPrompt == 0 ? "Personal Details" : (currentPrompt == 1 ? "Health Habits" : "Wellness Goals")} | Question ${currentQuestion}/${prompts.length}`;
+                // If the next counter indicates that the next prompt belongs to a different set
+                if (nextcounter >= 6) {
+                    // Update the prompt title to reflect the new step
+                    promptTitle.textContent = `STEP 3 - Wellness Goals | Question ${currentQuestion}/${prompts.length}`;
+                } else if (nextcounter >= 4) { // If the next counter indicates completion of the first set of questions
+                    // Update the prompt title to reflect the new step
+                    promptTitle.textContent = `STEP 2 - Health Habits | Question ${currentQuestion}/${prompts.length}`;
                 }
             } else {
+                // All questions have been seen
                 promptText.textContent = "Profile completed! Thank you!";
+                // Disable the buttons so the user can't click them
                 nextButton.disabled = true;
                 skipButton.disabled = true;
+                // Percentage bar value is 100% 
                 progressBar.value = 100;
+                // Redirect the user back to the home page after a delay
                 setTimeout(function() {
                     window.location.href = "https://w1970083.users.ecs.westminster.ac.uk/webDev/home.html";
-                }, 2000); // 3000 milliseconds = 3 seconds
+                }, 2000); // 2000 milliseconds = 2 seconds
             }
         }
 
+        //Function to update output, in the div from HTML code
         function updateOutput(inputValue){
-            const outputItem = document.createElement("p");
-            outputItem.textContent = inputValue;
-            outputDiv.appendChild(outputItem);
+            const outputItem = document.createElement("p"); //Creates <p> tag
+            outputItem.textContent = inputValue; // Inside that is the users answer
+            outputDiv.appendChild(outputItem); // Adds that to the Div
         }
 
+        //Listents for the users click on the start button, if clicked display what is hidden
         startButton.addEventListener("click", () => {
             container.style.display = "block";
             container2.style.display = "block";
@@ -329,40 +373,45 @@
             questionBar.style.display = "flex";
         });
 
+        //Listens to When next button is clicked
         nextButton.addEventListener("click", () => {
-            currentStep++;
-            nextcounter++;
-            currentQuestion++;
-            barValue += 11;
+            currentStep++; // Next question
+            nextcounter++; // increment next counter by 1
+            currentQuestion++; // Increment question counter by 1
+            barValue += 11; // Increase bar value variable
             progressBar.value = barValue
-            console.log(promptTextBox.value);
-            const inputValue = promptTextBox.value;
-            updateOutput(inputValue);
-            displayPrompts();
+            console.log(promptTextBox.value); 
+            const inputValue = promptTextBox.value; // Grab user input
+            updateOutput(inputValue); // Add it to the div by using update output function and passing user input as a parameter
+            displayPrompts(); // Display the next prompt
         });
 
+        //Listens to when skip button is clicked
         skipButton.addEventListener("click", () => {
+            //Increment all user progression variables
             currentStep++;
             nextcounter++;
             currentQuestion++;
             barValue += 11;
             progressBar.value = barValue
-            promptTextBox.value = "N/A"
-            const inputValue = promptTextBox.value
-            updateOutput(inputValue);
-            displayPrompts();
+            promptTextBox.value = "N/A" // But ofc user input text == N/A
+            const inputValue = promptTextBox.value 
+            updateOutput(inputValue); // which then gets updated to the output box
+            displayPrompts(); // Display next prompt
         });
 
-        navButtons.forEach(button => {
+        //This is for the question navbar
+        navButtons.forEach(button => { // We get each button and listen to if anything gets clicked
             button.addEventListener('click', () => {
-                const questionNumber = button.getAttribute('id');
-                console.log(`Button ${questionNumber} clicked!`);
+                const questionNumber = button.getAttribute('id'); // Store questionnumber of each button
+                console.log(`Button ${questionNumber} clicked!`); // Console log to check if it does
+                // A whole bunch of if, else statements that direct thte user back to what question by manually tweaking the user progression variables
                 if (questionNumber == 'P1Q1'){
                     currentPrompt = 0;
                     currentStep = 0;
                     currentQuestion = 1;
                     nextcounter = 0;
-                    barValue = 0;
+                    barValue = 0; // Bar value does not increase
                     progressBar.value += barValue
                     displayPrompts();
                 } else if (questionNumber == 'P1Q2'){
@@ -433,7 +482,8 @@
             });
         });
 
-        contentDropdown.addEventListener('mouseover', function() {
+        //For the navbar
+        contentDropdown.addEventListener('mouseover', function() { // When user hovers over the content dropdown, it displays.
             dropdown.style.display = 'block';
         });
 
